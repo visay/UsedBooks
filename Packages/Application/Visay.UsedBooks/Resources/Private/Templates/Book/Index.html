@@ -1,0 +1,33 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Available Books @ Our Shop</f:section>
+
+<f:section name="Content">
+    <f:if condition="{books}">
+        <f:then>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+                <f:for each="{books}" as="book" iteration="bookIterator">
+                    <tr>
+                        <td>{bookIterator.cycle}</td>
+                        <td><f:link.action action="show" arguments="{book: book}">{book.title}</f:link.action></td>
+                        <td>${book.price}</td>
+                        <td>
+                            <f:link.action action="edit" arguments="{book: book}">Edit</f:link.action>
+                            <f:link.action action="delete" arguments="{book: book}">Delete</f:link.action>
+                        </td>
+                    </tr>
+                </f:for>
+            </table>
+        </f:then>
+        <f:else>
+            <p>No books created yet.</p>
+        </f:else>
+    </f:if>
+    <p><f:link.action action="new">I have a book to sell / rent</f:link.action></p>
+</f:section>

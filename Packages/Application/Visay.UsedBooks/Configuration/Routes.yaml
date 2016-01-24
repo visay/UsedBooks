@@ -1,0 +1,68 @@
+#                                                                        #
+# Default routes configuration for the UsedBooks package                 #
+#                                                                        #
+
+-
+  name: 'Starting point'
+  uriPattern: ''
+  defaults:
+    '@package':    'Visay.UsedBooks'
+    '@controller': 'Standard'
+    '@action':     'index'
+
+-
+  name: 'List /New Book'
+  uriPattern: 'book(/{@action})'
+  defaults:
+    '@package':    'Visay.UsedBooks'
+    '@controller': 'Book'
+    '@action':     'index'
+
+-
+  name: 'List /New Book'
+  uriPattern: 'book/{@action}/{book}'
+  defaults:
+    '@package':    'Visay.UsedBooks'
+    '@controller': 'Book'
+  routeParts:
+    book:
+      objectType: 'Visay\UsedBooks\Domain\Model\Book'
+      uriPattern: '{title}'
+
+-
+  name: 'List / New Category'
+  uriPattern: 'category(/{@action})'
+  defaults:
+    '@package':    'Visay.UsedBooks'
+    '@controller': 'Category'
+    '@action':     'index'
+
+-
+  name: 'Create / Edit / Delete Category'
+  uriPattern: 'category/{@action}/{category}'
+  defaults:
+    '@package':    'Visay.UsedBooks'
+    '@controller': 'Category'
+  routeParts:
+    category:
+      objectType: 'Visay\UsedBooks\Domain\Model\Category'
+      uriPattern: '{title}'
+
+-
+  name: 'List / New Type'
+  uriPattern: 'type(/{@action})'
+  defaults:
+    '@package':    'Visay.UsedBooks'
+    '@controller': 'Type'
+    '@action':     'index'
+
+-
+  name: 'Create / Edit / Delete Type'
+  uriPattern: 'type/{@action}/{type}'
+  defaults:
+    '@package':    'Visay.UsedBooks'
+    '@controller': 'Type'
+  routeParts:
+    type:
+      objectType: 'Visay\UsedBooks\Domain\Model\Type'
+      uriPattern: '{title}'

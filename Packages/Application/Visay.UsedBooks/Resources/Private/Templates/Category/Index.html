@@ -1,0 +1,31 @@
+<f:layout name="Default" />
+
+<f:section name="Title">All Book Categories</f:section>
+
+<f:section name="Content">
+    <f:if condition="{categories}">
+        <f:then>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+                <f:for each="{categories}" as="category" iteration="categoryIterator">
+                    <tr>
+                        <td>{categoryIterator.cycle}</td>
+                        <td><f:link.action action="show" arguments="{category: category}">{category.title}</f:link.action></td>
+                        <td>
+                            <f:link.action action="edit" arguments="{category: category}">Edit</f:link.action>
+                            <f:link.action action="delete" arguments="{category: category}">Delete</f:link.action>
+                        </td>
+                    </tr>
+                </f:for>
+            </table>
+        </f:then>
+        <f:else>
+            <p>No categories created yet.</p>
+        </f:else>
+    </f:if>
+    <p><f:link.action action="new">Add a new category</f:link.action></p>
+</f:section>

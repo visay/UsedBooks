@@ -1,0 +1,52 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Book Details: "{book.title}"</f:section>
+
+<f:section name="Content">
+    <table>
+        <tr>
+            <th>Title</th>
+            <td>{book.title}</td>
+        </tr>
+    
+        <tr>
+            <th>Author</th>
+            <td>{book.author}</td>
+        </tr>
+    
+        <tr>
+            <th>Category</th>
+            <td>{book.category.title}</td>
+        </tr>
+    
+        <tr>
+            <th>Post date</th>
+            <td>{book.postDate -> f:format.date(format: 'd-m-Y H:i')}</td>
+        </tr>
+    
+        <tr>
+            <th>Price</th>
+            <td>{book.price}</td>
+        </tr>
+    
+        <tr>
+            <th>Quantity</th>
+            <td>{book.quantity}</td>
+        </tr>
+    
+        <tr>
+            <th>Type</th>
+            <td>{book.type.title}</td>
+        </tr>
+    
+        <tr>
+            <th>Description</th>
+            <td>{book.description}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><f:form.button>Click here if you are interested in this book</f:form.button></td>
+        </tr>
+    </table>
+    <br />
+    <f:link.action action="index">Back</f:link.action>
+</f:section>

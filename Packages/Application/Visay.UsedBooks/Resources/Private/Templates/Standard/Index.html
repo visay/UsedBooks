@@ -1,0 +1,20 @@
+<f:layout name="Home" />
+
+<f:section name="Title">What you can do:</f:section>
+
+<f:section name="Content">
+    <ul>
+        <li>
+            <f:link.action controller="Book" action="index">Book Listing</f:link.action>
+        </li>
+    </ul>
+    <h3>Admin area only:</h3>
+    <ul>
+        <li>
+            <f:link.action controller="Category" action="index">Manage Category</f:link.action>
+        </li>
+        <li>
+            <f:link.action controller="Type" action="index">Manage Type</f:link.action>
+        </li>
+    </ul>
+</f:section>

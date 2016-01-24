@@ -1,0 +1,12 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Editing: "{category.title}"</f:section>
+
+<f:section name="Content">
+    <f:form action="update" object="{category}" objectName="category">
+        <label for="title">Title:</label>
+        <f:form.textfield property="title" id="title" />
+        <br /><br />
+        <f:form.submit value="Update" />
+    </f:form>
+</f:section>

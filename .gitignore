@@ -1,7 +1,10 @@
 /Build/
 /Configuration/
 /Data/
-/Packages/
+/Packages/*
+!/Packages/Application/
+/Packages/Application/*
+!/Packages/Application/Visay.UsedBooks/
 /Web/
 /bin/
 /Readme.rst

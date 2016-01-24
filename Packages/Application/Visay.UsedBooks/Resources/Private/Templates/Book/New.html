@@ -1,0 +1,73 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">Posting New Book</f:section>
+
+<f:section name="Content">
+    <p>Just fill out the following form to create a new book:</p>
+
+    <f:form action="create" objectName="newBook">
+        <table>
+            <tr>
+                <th><label for="title">Title</label></th>
+                <td>
+                    <f:form.textfield property="title" id="title"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="author">Author</label></th>
+                <td>
+                    <f:form.textfield property="author" id="author"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="category">Category</label></th>
+                <td>
+                    <f:form.select property="category" options="{categories}" optionLabelField="title" id="category" />
+                </td>
+            </tr>
+            <tr style="display: none;">
+                <th><label for="postDate">Post date</label></th>
+                <td>
+                    <f:form.textfield type="datetime" value="{f:format.date(date: 'now', format: 'Y-m-d\TH:i:sP')}"
+                                      property="postDate" id="postDate"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="price">Price ($)</label></th>
+                <td>
+                    <f:form.textfield property="price" id="price"/>
+                </td>
+
+            <tr>
+                <th><label for="quantity">Quantity</label></th>
+                <td>
+                    <f:form.textfield property="quantity" id="quantity"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="type">Type</label></th>
+                <td>
+                    <f:form.select property="type" options="{types}" optionLabelField="title" id="type" />
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="description">Description</label></th>
+                <td>
+                    <f:form.textarea property="description" id="description"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th></th>
+                <td>
+                    <f:form.submit value="Add"/>
+                </td>
+            </tr>
+        </table>
+    </f:form>
+</f:section>

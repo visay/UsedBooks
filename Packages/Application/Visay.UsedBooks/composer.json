@@ -1,0 +1,13 @@
+{
+    "name": "visay/usedbooks",
+    "type": "typo3-flow-package",
+    "description": "Startup weekend used books application.",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Visay\\UsedBooks": "Classes"
+        }
+    }
+}

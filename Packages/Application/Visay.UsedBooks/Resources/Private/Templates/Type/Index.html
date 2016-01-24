@@ -1,0 +1,31 @@
+<f:layout name="Default" />
+
+<f:section name="Title">All Types</f:section>
+
+<f:section name="Content">
+    <f:if condition="{types}">
+        <f:then>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+                <f:for each="{types}" as="type" iteration="typeIterator">
+                    <tr>
+                        <td>{typeIterator.cycle}</td>
+                        <td><f:link.action action="show" arguments="{type: type}">{type.title}</f:link.action></td>
+                        <td>
+                            <f:link.action action="edit" arguments="{type: type}">Edit</f:link.action>
+                            <f:link.action action="delete" arguments="{type: type}">Delete</f:link.action>
+                        </td>
+                    </tr>
+                </f:for>
+            </table>
+        </f:then>
+        <f:else>
+            <p>No types created yet.</p>
+        </f:else>
+    </f:if>
+    <p><f:link.action action="new">Create a new type</f:link.action></p>
+</f:section>
