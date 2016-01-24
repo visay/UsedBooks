@@ -9,6 +9,7 @@
                 <tr>
                     <th>No.</th>
                     <th>Title</th>
+                    <th>Category</th>
                     <th>Price</th>
                     <th>Actions</th>
                 </tr>
@@ -16,6 +17,7 @@
                     <tr>
                         <td>{bookIterator.cycle}</td>
                         <td><f:link.action action="show" arguments="{book: book}">{book.title}</f:link.action></td>
+                        <td>{book.category.title}</td>
                         <td>${book.price}</td>
                         <td>
                             <f:link.action action="edit" arguments="{book: book}">Edit</f:link.action>
